@@ -10,12 +10,17 @@ public class bubble {
 
     static void func(int[] a) {
         for (int i = 0; i < a.length - 1; i++) {
+            boolean check = false;
             for (int j = 0; j < a.length - i - 1; j++) {
                 if (a[j] > a[j+1]) {
                     int temp = a[j+1];
                     a[j+1] = a[j];
                     a[j] = temp;
+                    check = true;
                 }
+            }
+            if(check == false) {
+                return;
             }
         }
     }
